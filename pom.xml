@@ -1,9 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jenkins-ci.main</groupId>
   <artifactId>maven-plugin</artifactId>
   <version>3.15.1</version>
+  <packaging>hpi</packaging>
+  <name>Maven Integration plugin</name>
+  <description>This plug-in provides, for better and for worse, a deep integration of Jenkins and Maven: Automatic triggers between projects depending on SNAPSHOTs, automated configuration of various Jenkins publishers (Junit, ...).</description>
+  <url>https://github.com/jenkinsci/maven-plugin</url>
+  <inceptionYear>2016</inceptionYear>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/maven-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/maven-plugin.git</developerConnection>
+    <tag>maven-plugin-3.15.1</tag>
+    <url>http://github.com/jenkinsci/maven-plugin</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>https://issues.jenkins-ci.org/browse/JENKINS/component/15487</url>
+  </issueManagement>
+  <distributionManagement>
+    <repository>
+      <id>maven.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>maven.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -684,6 +716,12 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
